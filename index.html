@@ -1,0 +1,1172 @@
+0<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sohna Salon - Premium Grooming</title>
+    
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;700;800&display=swap" rel="stylesheet">
+    <!-- custim css link here  -->
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <!-- Leaflet CSS (OpenStreetMap) -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+</head>
+<body>
+      <!-- Loader -->
+    <div class="loader" id="loader">
+        <div class="loader-logo">
+            <i class="fas fa-scissors loader-icon"></i>
+            Sohna Salon
+        </div>
+        <div class="loader-bar">
+            <div class="loader-progress"></div>
+        </div>
+    </div>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <!-- Logo with Icon -->
+            <a class="navbar-brand" href="#home">
+                <i class="fas fa-scissors logo-icon"></i>
+                Sohna Salon
+            </a>
+
+            <!-- Hamburger Menu Button -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <div class="hamburger-menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </button>
+
+            <!-- Navbar Links -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-lg-center align-middle">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#services">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#gallery">Gallery</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#booking">Contact</a>
+                    </li>
+                   
+                 
+                    <li class="nav-item">
+                        <a class="btn-book-now" href="#booking">
+                            <i class="fas fa-calendar-check me-2"></i>Book Now
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+      <!-- Hero Section -->
+    <section class="hero" role="region" id="home" aria-label="Hero - Salon">
+      <div class="hero__inner">
+        <!-- LEFT: Content -->
+        <div class="hero__content">
+          <h1 class="hero__title fade-in">
+            The Best Men's Hair<br />Salon In Your City
+          </h1>
+
+          <p class="hero__desc fade-in">
+            Experience The Best New Hairstyles in Our Hair Salon, Just Book Your
+            Desired Day From Now On And Easily Style Your Hair
+          </p>
+
+          <div class="hero__ctas">
+            <button class="btn btn--primary fade-in" id="bookNowBtn">
+              <i class="fas fa-calendar-check"></i>Book Now
+            </button>
+            <button class="btn btn--outline fade-in" id="readMoreBtn">
+              <i class="fas fa-arrow-right"></i>Read More
+            </button>
+          </div>
+
+          <!-- Stats Cards -->
+          <div class="stats-cards">
+            <div class="stat-card fade-in">
+              <div class="stat-card__number count-up" data-target="12">0</div>
+              <div class="stat-card__label">Active Branches</div>
+            </div>
+            <div class="stat-card fade-in">
+              <div class="stat-card__number count-up" data-target="43">0</div>
+              <div class="stat-card__label">Professional Beauticians</div>
+            </div>
+            <div class="stat-card fade-in">
+              <div class="stat-card__number count-up" data-target="3">0</div>
+              <div class="stat-card__label">Premium Services</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- RIGHT: Video -->
+        <div class="hero__media">
+          <div class="media__frame">
+            <video id="salonVideo" loop muted playsinline>
+              <source
+                src="https://assets.mixkit.co/videos/preview/mixkit-barber-cutting-a-mans-hair-43937-large.mp4"
+                type="video/mp4"
+              />
+              Your browser does not support the video tag.
+            </video>
+            <div class="video-overlay" id="videoOverlay">
+              <button class="play-btn" id="playBtn" aria-label="Play video">
+                <i class="fas fa-play"></i>
+              </button>
+            </div>
+            <div class="video-text">Salon Experience Video</div>
+          </div>
+        </div>
+
+        <!-- Column Divider -->
+        <div class="col-divider" aria-hidden="true">
+          <div class="col-divider__line">
+            <div class="col-divider__block"></div>
+          </div>
+        </div>
+      </div>
+
+    
+    </section>
+
+   <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <!-- Section Header -->
+            <div class="section-header text-center mb-5">
+                <span class="section-badge">Our Legacy</span>
+                <h2 class="section-title">Crafting Confidence Since 1995</h2>
+                <p class="section-subtitle">Three generations of barbering excellence in Karachi</p>
+            </div>
+
+            <div class="row align-items-center">
+                <!-- Content Column -->
+                <div class="col-lg-6 mb-4">
+                    <div class="about-content">
+                        <!-- Founder Story -->
+                        <div class="founder-card glass-card">
+                            <div class="founder-header">
+                                <div class="founder-avatar">
+                                    <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" 
+                                         alt="Founder - Sohna Salon">
+                                </div>
+                                <div class="founder-info">
+                                    <h4>Mr. [Father's Name]</h4>
+                                    <p class="text-red">Founder & Master Barber</p>
+                                </div>
+                            </div>
+                            <p class="founder-quote">
+                                "We don't just cut hair; we craft confidence and build relationships that last generations."
+                            </p>
+                        </div>
+
+                        <!-- Main Content -->
+                        <div class="story-content">
+                            <h3 class="story-title">From Humble Beginnings to Premium Legacy</h3>
+                            <p class="story-text">
+                                Founded in <strong>1995</strong> with a single chair and big dreams, Sohna Salon began as a small neighborhood barbershop in Karachi. What started as a passion for traditional barbering has evolved into a premium grooming destination serving thousands of satisfied clients.
+                            </p>
+                            
+                            <div class="legacy-points">
+                                <div class="legacy-item">
+                                    <i class="fas fa-crown legacy-icon"></i>
+                                    <div>
+                                        <h5>Premium Experience</h5>
+                                        <p>Luxury grooming with personalized attention</p>
+                                    </div>
+                                </div>
+                                <div class="legacy-item">
+                                    <i class="fas fa-users legacy-icon"></i>
+                                    <div>
+                                        <h5>Family Legacy</h5>
+                                        <p>Three generations of barbering expertise</p>
+                                    </div>
+                                </div>
+                                <div class="legacy-item">
+                                    <i class="fas fa-award legacy-icon"></i>
+                                    <div>
+                                        <h5>Award Winning</h5>
+                                        <p>Recognized for excellence in men's grooming</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Timeline Column -->
+                <div class="col-lg-6">
+                    <div class="timeline-container">
+                        <h4 class="timeline-title">Our Journey</h4>
+                        <div class="timeline">
+                            <!-- Timeline Item 1 -->
+                            <div class="timeline-item">
+                                <div class="timeline-year">1995</div>
+                                <div class="timeline-content glass-card">
+                                    <h5>Grand Opening</h5>
+                                    <p>Started with a single chair in Karachi, focusing on traditional barbering techniques</p>
+                                </div>
+                            </div>
+
+                            <!-- Timeline Item 2 -->
+                            <div class="timeline-item">
+                                <div class="timeline-year">2007</div>
+                                <div class="timeline-content glass-card">
+                                    <h5>Second Generation</h5>
+                                    <p>[Client Name] joined the family business, bringing modern techniques</p>
+                                </div>
+                            </div>
+
+                            <!-- Timeline Item 3 -->
+                            <div class="timeline-item">
+                                <div class="timeline-year">2014-2017</div>
+                                <div class="timeline-content glass-card">
+                                    <h5>International Experience</h5>
+                                    <p>Gained expertise working in Saudi Arabia's premium salons</p>
+                                </div>
+                            </div>
+
+                            <!-- Timeline Item 4 -->
+                            <div class="timeline-item">
+                                <div class="timeline-year">2021</div>
+                                <div class="timeline-content glass-card">
+                                    <h5>Advanced Certification</h5>
+                                    <p>Completed diplomas in Ladies Hair & Beauty from Federal Government</p>
+                                </div>
+                            </div>
+
+                            <!-- Timeline Item 5 -->
+                            <div class="timeline-item">
+                                <div class="timeline-year">2024</div>
+                                <div class="timeline-content glass-card">
+                                    <h5>Expansion</h5>
+                                    <p>3 Salon branches + Aesthetic Clinic under Sohna Brand</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Stats Section -->
+            <div class="row mt-5">
+                <div class="col-12">
+                    <div class="stats-showcase">
+                        <div class="row">
+                            <div class="col-md-3 col-6">
+                                <div class="stat-box text-center">
+                                    <div class="stat-number">28+</div>
+                                    <div class="stat-label">Years Experience</div>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-6">
+                                <div class="stat-box text-center">
+                                    <div class="stat-number">3</div>
+                                    <div class="stat-label">Salon Branches</div>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-6">
+                                <div class="stat-box text-center">
+                                    <div class="stat-number">5K+</div>
+                                    <div class="stat-label">Happy Clients</div>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-6">
+                                <div class="stat-box text-center">
+                                    <div class="stat-number">15+</div>
+                                    <div class="stat-label">Expert Team</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CTA Section -->
+            <div class="row mt-5">
+                <div class="col-12 text-center">
+                    <div class="about-cta">
+                        <h3>Ready to Experience the Sohna Difference?</h3>
+                        <p>Book your appointment and join our family of well-groomed gentlemen</p>
+                        <a href="#booking" class="btn btn-modern btn-modern-primary">
+                            <i class="fas fa-calendar-check me-2"></i>Book Your Visit
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+       <!-- Services Section -->
+    <section id="services" class="services-section">
+        <div class="container">
+            <!-- Section Header -->
+            <div class="section-header">
+                <span class="section-badge fade-up">Our Services</span>
+                <h2 class="section-title fade-up">Premium Grooming Services</h2>
+                <p class="section-subtitle fade-up">Experience the finest barbering services with expert craftsmanship and premium products</p>
+            </div>
+
+            <!-- Service Categories -->
+            <div class="service-categories fade-up">
+                <button class="category-btn active" data-category="all">All Services</button>
+                <button class="category-btn" data-category="hair">Hair Services</button>
+                <button class="category-btn" data-category="beard">Beard Grooming</button>
+                <button class="category-btn" data-category="facial">Facial Treatments</button>
+                <button class="category-btn" data-category="package">Packages</button>
+            </div>
+
+            <!-- Services Grid -->
+            <div class="services-grid">
+                <!-- Haircut Service -->
+                <div class="service-card fade-up" data-category="hair">
+                    <div class="service-icon">
+                        <i class="fas fa-cut"></i>
+                    </div>
+                    <h3 class="service-title">Precision Haircut</h3>
+                    <p class="service-description">Expert haircut tailored to your style with modern techniques and traditional precision.</p>
+                    <ul class="service-features">
+                        <li>Consultation & style advice</li>
+                        <li>Precision cutting</li>
+                        <li>Shampoo & conditioning</li>
+                        <li>Final styling</li>
+                    </ul>
+                    <div class="service-price">
+                        <span class="price-amount">Rs 800</span>
+                        <span class="price-duration">45-60 mins</span>
+                    </div>
+                    <div class="service-actions">
+                        <button class="btn-service btn-book">Book Now</button>
+                        <button class="btn-service btn-details">Details</button>
+                    </div>
+                </div>
+
+                <!-- Beard Grooming -->
+                <div class="service-card fade-up" data-category="beard">
+                    <div class="service-icon">
+                        <i class="fas fa-user-check"></i>
+                    </div>
+                    <h3 class="service-title">Beard Styling</h3>
+                    <p class="service-description">Professional beard trimming, shaping, and conditioning for a sharp, polished look.</p>
+                    <ul class="service-features">
+                        <li>Beard trimming & shaping</li>
+                        <li>Hot towel treatment</li>
+                        <li>Beard oil application</li>
+                        <li>Precision line work</li>
+                    </ul>
+                    <div class="service-price">
+                        <span class="price-amount">Rs 600</span>
+                        <span class="price-duration">30-45 mins</span>
+                    </div>
+                    <div class="service-actions">
+                        <button class="btn-service btn-book">Book Now</button>
+                        <button class="btn-service btn-details">Details</button>
+                    </div>
+                </div>
+
+                <!-- Traditional Shave -->
+                <div class="service-card fade-up" data-category="beard">
+                    <div class="service-icon">
+                        <i class="fas fa-user-tie"></i>
+                    </div>
+                    <h3 class="service-title">Traditional Shave</h3>
+                    <p class="service-description">Experience the classic barber shop shave with hot towels and premium aftershave.</p>
+                    <ul class="service-features">
+                        <li>Hot towel preparation</li>
+                        <li>Premium shaving cream</li>
+                        <li>Straight razor shave</li>
+                        <li>Aftershave treatment</li>
+                    </ul>
+                    <div class="service-price">
+                        <span class="price-amount">Rs 500</span>
+                        <span class="price-duration">25-35 mins</span>
+                    </div>
+                    <div class="service-actions">
+                        <button class="btn-service btn-book">Book Now</button>
+                        <button class="btn-service btn-details">Details</button>
+                    </div>
+                </div>
+
+                <!-- Hair Coloring -->
+                <div class="service-card fade-up" data-category="hair">
+                    <div class="service-icon">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                    <h3 class="service-title">Hair Coloring</h3>
+                    <p class="service-description">Expert coloring services using premium products for vibrant, long-lasting results.</p>
+                    <ul class="service-features">
+                        <li>Color consultation</li>
+                        <li>Premium hair color</li>
+                        <li>Root touch-up</li>
+                        <li>Color protection</li>
+                    </ul>
+                    <div class="service-price">
+                        <span class="price-amount">Rs 1500</span>
+                        <span class="price-duration">90-120 mins</span>
+                    </div>
+                    <div class="service-actions">
+                        <button class="btn-service btn-book">Book Now</button>
+                        <button class="btn-service btn-details">Details</button>
+                    </div>
+                </div>
+
+                <!-- Facial Treatment -->
+                <div class="service-card fade-up" data-category="facial">
+                    <div class="service-icon">
+                        <i class="fas fa-spa"></i>
+                    </div>
+                    <h3 class="service-title">Premium Facial</h3>
+                    <p class="service-description">Revitalizing facial treatment to refresh and rejuvenate your skin.</p>
+                    <ul class="service-features">
+                        <li>Deep cleansing</li>
+                        <li>Exfoliation</li>
+                        <li>Facial massage</li>
+                        <li>Moisturizing mask</li>
+                    </ul>
+                    <div class="service-price">
+                        <span class="price-amount">Rs 1200</span>
+                        <span class="price-duration">60-75 mins</span>
+                    </div>
+                    <div class="service-actions">
+                        <button class="btn-service btn-book">Book Now</button>
+                        <button class="btn-service btn-details">Details</button>
+                    </div>
+                </div>
+
+                <!-- Hair Treatment -->
+                <div class="service-card fade-up" data-category="hair">
+                    <div class="service-icon">
+                        <i class="fas fa-magic"></i>
+                    </div>
+                    <h3 class="service-title">Hair Treatment</h3>
+                    <p class="service-description">Nourishing treatments to restore health, shine, and vitality to your hair.</p>
+                    <ul class="service-features">
+                        <li>Hair analysis</li>
+                        <li>Deep conditioning</li>
+                        <li>Protein treatment</li>
+                        <li>Scalp massage</li>
+                    </ul>
+                    <div class="service-price">
+                        <span class="price-amount">Rs 1000</span>
+                        <span class="price-duration">45-60 mins</span>
+                    </div>
+                    <div class="service-actions">
+                        <button class="btn-service btn-book">Book Now</button>
+                        <button class="btn-service btn-details">Details</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Packages Section -->
+            <div class="packages-section">
+                <div class="section-header">
+                    <h2 class="section-title fade-up">Special Packages</h2>
+                    <p class="section-subtitle fade-up">Save more with our curated grooming packages</p>
+                </div>
+
+                <div class="packages-grid">
+                    <!-- Basic Package -->
+                    <div class="package-card scale-up">
+                        <div class="package-icon">
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <h3 class="package-title">Classic Package</h3>
+                        <div class="package-price">Rs 1200</div>
+                        <ul class="package-features">
+                            <li>Precision Haircut</li>
+                            <li>Beard Trimming</li>
+                            <li>Hair Wash</li>
+                            <li>Basic Styling</li>
+                        </ul>
+                        <button class="btn-service btn-book">Choose Package</button>
+                    </div>
+
+                    <!-- Popular Package -->
+                    <div class="package-card scale-up popular">
+                        <div class="package-icon">
+                            <i class="fas fa-crown"></i>
+                        </div>
+                        <h3 class="package-title">Premium Package</h3>
+                        <div class="package-price">Rs 2000</div>
+                        <ul class="package-features">
+                            <li>Precision Haircut</li>
+                            <li>Beard Styling</li>
+                            <li>Traditional Shave</li>
+                            <li>Hair Treatment</li>
+                            <li>Premium Styling</li>
+                        </ul>
+                        <button class="btn-service btn-book">Choose Package</button>
+                    </div>
+
+                    <!-- Luxury Package -->
+                    <div class="package-card scale-up">
+                        <div class="package-icon">
+                            <i class="fas fa-gem"></i>
+                        </div>
+                        <h3 class="package-title">Royal Package</h3>
+                        <div class="package-price">Rs 3000</div>
+                        <ul class="package-features">
+                            <li>Precision Haircut</li>
+                            <li>Beard Styling</li>
+                            <li>Traditional Shave</li>
+                            <li>Premium Facial</li>
+                            <li>Hair Coloring</li>
+                            <li>Luxury Products</li>
+                        </ul>
+                        <button class="btn-service btn-book">Choose Package</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CTA Section -->
+            <div class="services-cta fade-up">
+                <h3>Ready for Your Transformation?</h3>
+                <p>Book your appointment now and experience the Sohna Salon difference. Our expert barbers are ready to craft your perfect look.</p>
+                <button class="btn-cta">
+                    <i class="fas fa-calendar-check me-2"></i>Book Appointment Now
+                </button>
+            </div>
+        </div>
+    </section>
+
+
+        <!-- Booking Section -->
+    <section id="booking" class="booking-section">
+        <div class="container">
+            <!-- Section Header -->
+            <div class="section-header">
+                <span class="section-badge">Book Appointment</span>
+                <h2 class="section-title">Schedule Your Visit</h2>
+                <p class="section-subtitle">Book your appointment with our expert barbers and experience premium grooming</p>
+            </div>
+
+            <!-- Progress Bar -->
+            <div class="progress-container">
+                <div class="progress-steps">
+                    <div class="progress-bar" id="progressBar" style="width: 0%"></div>
+                    <div class="step-indicator active" data-step="1">
+                        1
+                        <span class="step-label">Service</span>
+                    </div>
+                    <div class="step-indicator" data-step="2">
+                        2
+                        <span class="step-label">Date & Time</span>
+                    </div>
+                    <div class="step-indicator" data-step="3">
+                        3
+                        <span class="step-label">Details</span>
+                    </div>
+                    <div class="step-indicator" data-step="4">
+                        4
+                        <span class="step-label">Confirm</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="booking-container">
+                <!-- Booking Form -->
+                <div class="booking-form-container">
+                    <form id="bookingForm">
+                        <!-- Step 1: Service Selection -->
+                        <div class="form-step active" id="step1">
+                            <div class="step-header">
+                                <h3 class="step-title">Select Service</h3>
+                                <p class="step-subtitle">Choose your preferred grooming service</p>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label">Service Type</label>
+                                <select class="form-control form-select" id="serviceType" required>
+                                    <option value="">Select a service</option>
+                                    <option value="haircut" data-price="800">Precision Haircut - Rs 800</option>
+                                    <option value="beard" data-price="600">Beard Styling - Rs 600</option>
+                                    <option value="shave" data-price="500">Traditional Shave - Rs 500</option>
+                                    <option value="facial" data-price="1200">Premium Facial - Rs 1200</option>
+                                    <option value="coloring" data-price="1500">Hair Coloring - Rs 1500</option>
+                                    <option value="treatment" data-price="1000">Hair Treatment - Rs 1000</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label">Package (Optional)</label>
+                                <select class="form-control form-select" id="package">
+                                    <option value="">No package</option>
+                                    <option value="classic" data-price="1200">Classic Package - Rs 1200</option>
+                                    <option value="premium" data-price="2000">Premium Package - Rs 2000</option>
+                                    <option value="royal" data-price="3000">Royal Package - Rs 3000</option>
+                                </select>
+                            </div>
+
+                            <div class="form-navigation">
+                                <div></div> <!-- Spacer -->
+                                <button type="button" class="btn-nav btn-next" onclick="nextStep(2)">
+                                    Next <i class="fas fa-arrow-right"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Step 2: Date & Time -->
+                        <div class="form-step" id="step2">
+                            <div class="step-header">
+                                <h3 class="step-title">Select Date & Time</h3>
+                                <p class="step-subtitle">Choose your preferred appointment slot</p>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label">Appointment Date</label>
+                                <input type="date" class="form-control" id="appointmentDate" min="" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label">Preferred Time</label>
+                                <div class="time-slots" id="timeSlots">
+                                    <!-- Time slots will be generated by JavaScript -->
+                                </div>
+                            </div>
+
+                            <div class="form-navigation">
+                                <button type="button" class="btn-nav btn-prev" onclick="prevStep(1)">
+                                    <i class="fas fa-arrow-left"></i> Previous
+                                </button>
+                                <button type="button" class="btn-nav btn-next" onclick="nextStep(3)">
+                                    Next <i class="fas fa-arrow-right"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Step 3: Personal Details -->
+                        <div class="form-step" id="step3">
+                            <div class="step-header">
+                                <h3 class="step-title">Your Details</h3>
+                                <p class="step-subtitle">Tell us how we can reach you</p>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label">Full Name</label>
+                                <input type="text" class="form-control" id="fullName" placeholder="Enter your full name" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label">Phone Number</label>
+                                <input type="tel" class="form-control" id="phoneNumber" placeholder="+92 300 1234567" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label">Email Address</label>
+                                <input type="email" class="form-control" id="email" placeholder="your@email.com">
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label">Special Requests (Optional)</label>
+                                <textarea class="form-control" id="specialRequests" rows="3" placeholder="Any special requirements or notes..."></textarea>
+                            </div>
+
+                            <div class="form-navigation">
+                                <button type="button" class="btn-nav btn-prev" onclick="prevStep(2)">
+                                    <i class="fas fa-arrow-left"></i> Previous
+                                </button>
+                                <button type="button" class="btn-nav btn-next" onclick="nextStep(4)">
+                                    Next <i class="fas fa-arrow-right"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Step 4: Confirmation -->
+                        <div class="form-step" id="step4">
+                            <div class="step-header">
+                                <h3 class="step-title">Confirm Booking</h3>
+                                <p class="step-subtitle">Review your appointment details</p>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="summary-item">
+                                    <span class="summary-label">Service:</span>
+                                    <span class="summary-value" id="confirmService">-</span>
+                                </div>
+                                <div class="summary-item">
+                                    <span class="summary-label">Package:</span>
+                                    <span class="summary-value" id="confirmPackage">-</span>
+                                </div>
+                                <div class="summary-item">
+                                    <span class="summary-label">Date:</span>
+                                    <span class="summary-value" id="confirmDate">-</span>
+                                </div>
+                                <div class="summary-item">
+                                    <span class="summary-label">Time:</span>
+                                    <span class="summary-value" id="confirmTime">-</span>
+                                </div>
+                                <div class="summary-item">
+                                    <span class="summary-label">Name:</span>
+                                    <span class="summary-value" id="confirmName">-</span>
+                                </div>
+                                <div class="summary-item">
+                                    <span class="summary-label">Phone:</span>
+                                    <span class="summary-value" id="confirmPhone">-</span>
+                                </div>
+                            </div>
+
+                            <div class="form-navigation">
+                                <button type="button" class="btn-nav btn-prev" onclick="prevStep(3)">
+                                    <i class="fas fa-arrow-left"></i> Previous
+                                </button>
+                                <button type="button" class="btn-nav btn-submit" onclick="submitBooking()">
+                                    <i class="fas fa-calendar-check"></i> Confirm Booking
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Success Message -->
+                        <div class="success-message" id="successMessage">
+                            <div class="success-icon">
+                                <i class="fas fa-check-circle"></i>
+                            </div>
+                            <h3 class="success-title">Booking Confirmed!</h3>
+                            <p class="success-text">Your appointment has been scheduled successfully. We'll contact you shortly to confirm.</p>
+                            <button type="button" class="btn-nav btn-submit" onclick="resetForm()">
+                                <i class="fas fa-plus"></i> Book Another
+                            </button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Booking Summary -->
+                <div class="booking-summary">
+                    <h3 class="summary-title">Booking Summary</h3>
+                    
+                    <div class="summary-item">
+                        <span class="summary-label">Service:</span>
+                        <span class="summary-value" id="summaryService">-</span>
+                    </div>
+                    
+                    <div class="summary-item">
+                        <span class="summary-label">Package:</span>
+                        <span class="summary-value" id="summaryPackage">-</span>
+                    </div>
+                    
+                    <div class="summary-item">
+                        <span class="summary-label">Date & Time:</span>
+                        <span class="summary-value" id="summaryDateTime">-</span>
+                    </div>
+                    
+                    <div class="summary-item">
+                        <span class="summary-label">Duration:</span>
+                        <span class="summary-value" id="summaryDuration">-</span>
+                    </div>
+
+                    <div class="summary-total">
+                        <span>Total:</span>
+                        <span class="total-price" id="summaryTotal">Rs 0</span>
+                    </div>
+
+                    <!-- Contact Information -->
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <i class="fas fa-phone contact-icon"></i>
+                            <span>+92 300 1234567</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt contact-icon"></i>
+                            <span>Karachi, Pakistan</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-clock contact-icon"></i>
+                            <span>Open 7 Days • 9AM - 8PM</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="gallery-section">
+        <div class="container">
+            <!-- Section Header -->
+            <div class="section-header">
+                <span class="section-badge">Our Gallery</span>
+                <h2 class="section-title">See Our Work</h2>
+                <p class="section-subtitle">Witness the transformations and experience our premium grooming results</p>
+            </div>
+
+            <!-- Gallery Filters -->
+            <div class="gallery-filters">
+                <button class="filter-btn active" data-filter="all">All Work</button>
+                <button class="filter-btn" data-filter="haircuts">Haircuts</button>
+                <button class="filter-btn" data-filter="beard">Beard Styling</button>
+                <button class="filter-btn" data-filter="facial">Facial Treatments</button>
+                <button class="filter-btn" data-filter="salon">Salon Interior</button>
+            </div>
+
+            <!-- Gallery Grid -->
+            <div class="gallery-grid">
+                <!-- Item 1 - Haircut -->
+                <div class="gallery-item" data-category="haircuts">
+                    <div class="gallery-card">
+                        <div class="gallery-image">
+                            <img src="assets/pic/man2.jpg" 
+                             alt="Premium Haircut Transformation" loading="lazy">
+                            <div class="gallery-overlay">
+                                <div class="gallery-content">
+                                    <h4>Classic Fade Haircut</h4>
+                                    <p>Before & After Transformation</p>
+                                    <div class="gallery-actions">
+                                        <button class="btn-view" onclick="openLightbox(1)">
+                                            <i class="fas fa-expand"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 2 - Beard Styling -->
+                <div class="gallery-item" data-category="beard">
+                    <div class="gallery-card">
+                        <div class="gallery-image">
+                            <img src="assets/pic/beard.jpg" 
+                             alt="Beard Styling Service" loading="lazy">
+                            <div class="gallery-overlay">
+                                <div class="gallery-content">
+                                    <h4>Beard Styling</h4>
+                                    <p>Precision Beard Design</p>
+                                    <div class="gallery-actions">
+                                        <button class="btn-view" onclick="openLightbox(2)">
+                                            <i class="fas fa-expand"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 3 - Facial Treatment -->
+                <div class="gallery-item" data-category="facial">
+                    <div class="gallery-card">
+                        <div class="gallery-image">
+                            <img src="assets/pic/facial.jpg" 
+                             alt="Facial Treatment" loading="lazy">
+                            <div class="gallery-overlay">
+                                <div class="gallery-content">
+                                    <h4>Premium Facial</h4>
+                                    <p>Skin Rejuvenation</p>
+                                    <div class="gallery-actions">
+                                        <button class="btn-view" onclick="openLightbox(3)">
+                                            <i class="fas fa-expand"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 4 - Salon Interior -->
+                <div class="gallery-item" data-category="salon">
+                    <div class="gallery-card">
+                        <div class="gallery-image">
+                            <img src="assets/pic/salon interior.jpg" 
+                             alt="Salon Interior" loading="lazy">
+                            <div class="gallery-overlay">
+                                <div class="gallery-content">
+                                    <h4>Luxury Interior</h4>
+                                    <p>Premium Salon Setup</p>
+                                    <div class="gallery-actions">
+                                        <button class="btn-view" onclick="openLightbox(4)">
+                                            <i class="fas fa-expand"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 5 - Haircut -->
+                <div class="gallery-item" data-category="haircuts">
+                    <div class="gallery-card">
+                        <div class="gallery-image">
+                           <img src="assets/pic/hair cut.jpg" 
+                             alt="Modern Hair Style" loading="lazy">
+                            <div class="gallery-overlay">
+                                <div class="gallery-content">
+                                    <h4>Modern Style</h4>
+                                    <p>Contemporary Haircut</p>
+                                    <div class="gallery-actions">
+                                        <button class="btn-view" onclick="openLightbox(5)">
+                                            <i class="fas fa-expand"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 6 - Beard -->
+                <div class="gallery-item" data-category="beard">
+                    <div class="gallery-card">
+                        <div class="gallery-image">
+                           <img src="assets/pic/man1.jpg" 
+                             alt="Beard Grooming" loading="lazy">
+                            <div class="gallery-overlay">
+                                <div class="gallery-content">
+                                    <h4>Beard Care</h4>
+                                    <p>Complete Grooming</p>
+                                    <div class="gallery-actions">
+                                        <button class="btn-view" onclick="openLightbox(6)">
+                                            <i class="fas fa-expand"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 7 - Facial -->
+                <div class="gallery-item" data-category="facial">
+                    <div class="gallery-card">
+                        <div class="gallery-image">
+                             <img src="assets/pic/child1.jpg" 
+                             alt="Skin Care" loading="lazy">
+                            <div class="gallery-overlay">
+                                <div class="gallery-content">
+                                    <h4>Skin Treatment</h4>
+                                    <p>Professional Care</p>
+                                    <div class="gallery-actions">
+                                        <button class="btn-view" onclick="openLightbox(7)">
+                                            <i class="fas fa-expand"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 8 - Salon -->
+                <div class="gallery-item" data-category="salon">
+                    <div class="gallery-card">
+                        <div class="gallery-image">
+                            <img src="assets/pic/salon out pic.jpg" 
+                             alt="Salon Environment" loading="lazy">
+                            <div class="gallery-overlay">
+                                <div class="gallery-content">
+                                    <h4>Work Station</h4>
+                                    <p>Professional Setup</p>
+                                    <div class="gallery-actions">
+                                        <button class="btn-view" onclick="openLightbox(8)">
+                                            <i class="fas fa-expand"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CTA Section -->
+            <div class="gallery-cta">
+                <div class="cta-content">
+                    <h3>Ready for Your Transformation?</h3>
+                    <p>Book your appointment today and experience the Sohna Salon difference</p>
+                    <a href="#booking" class="btn-cta">
+                        <i class="fas fa-calendar-check me-2"></i>Book Your Visit
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Lightbox Modal -->
+        <div id="lightbox" class="lightbox">
+            <div class="lightbox-content">
+                <button class="lightbox-close" onclick="closeLightbox()">
+                    <i class="fas fa-times"></i>
+                </button>
+                <button class="lightbox-nav lightbox-prev" onclick="changeImage(-1)">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button class="lightbox-nav lightbox-next" onclick="changeImage(1)">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+                <img id="lightbox-img" src="" alt="">
+                <div class="lightbox-caption">
+                    <h4 id="lightbox-title"></h4>
+                    <p id="lightbox-desc"></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    
+    <!-- Professional Footer -->
+    <footer class="footer-main">
+        <div class="footer-top"></div>
+        
+        <div class="container">
+            <div class="footer-content">
+                <!-- Top Row: Logo, Quick Links, Services, Contact, Map -->
+                <div class="row g-4">
+                    <!-- Logo & Tagline -->
+                    <div class="col-lg-3 col-md-6">
+                        <div class="brand-section">
+                            <div class="brand-logo">
+                                <span>Sohna Salon</span>
+                            </div>
+                            <p class="brand-tagline">
+                                Premium grooming & styling services since 1995. 
+                                Experience excellence in men's grooming with three generations of expertise.
+                            </p>
+                            <div class="social-section">
+                                <div class="social-heading">Follow Us</div>
+                                <div class="social-icons">
+                                    <a href="https://www.facebook.com/sohnasalon/" class="social-icon" aria-label="Facebook">
+                                        <i class="fab fa-facebook-f"></i>
+                                    </a>
+                                    <a href="http://instagram.com/sohna_salon/" class="social-icon" aria-label="Instagram">
+                                        <i class="fab fa-instagram"></i>
+                                    </a>
+                                    <a href="https://www.tiktok.com/@sohnasalon" class="social-icon" aria-label="TikTok">
+                                        <i class="fab fa-tiktok"></i>
+                                    </a>
+                                    <a href=" https://www.youtube.com/@sohnasalon3824" class="social-icon" aria-label="YouTube">
+                                        <i class="fab fa-youtube"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Quick Links -->
+                    <div class="col-lg-2 col-md-6">
+                        <div class="quick-links-section">
+                            <h3 class="section-title">Quick Links</h3>
+                            <ul class="quick-links">
+                                <li><a href="#home">Home</a></li>
+                                <li><a href="#about">About Us</a></li>
+                                <li><a href="#services">Services</a></li>
+                                <li><a href="#gallery">Gallery</a></li>
+                                <li><a href="#booking">Booking</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Services -->
+                    <div class="col-lg-2 col-md-6">
+                        <div class="services-section">
+                            <h3 class="section-title">Services</h3>
+                            <ul class="services-list">
+                                <li><a href="#services">Hair Cutting</a></li>
+                                <li><a href="#services">Beard Styling</a></li>
+                                <li><a href="#services">Facial Care</a></li>
+                                <li><a href="#services">Hair Color</a></li>
+                                <li><a href="#services">Skin Care</a></li>
+                                <li><a href="#services">Massage</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Contact Info -->
+                    <div class="col-lg-2 col-md-6">
+                        <div class="contact-section">
+                            <h3 class="section-title">Contact Info</h3>
+                            <ul class="contact-info">
+                                <li class="contact-item">
+                                    <div class="contact-icon">
+                                        <i class="fas fa-map-marker-alt"></i>
+                                    </div>
+                                    <div class="contact-details">
+                                        <h4>Address</h4>
+                                        <p>plot number 27/2/6، Sohna salon, Malir Cantt Check Post No 2, sheet 24 Jinnah Ave، near zaidi Manzil bus stop and, Model Colony Block 24 malir, , Karachi, Pakistan<br>Karachi, Pakistan</p>
+                                    </div>
+                                </li>
+                                <li class="contact-item">
+                                    <div class="contact-icon">
+                                        <i class="fas fa-phone"></i>
+                                    </div>
+                                    <div class="contact-details">
+                                        <h4>Phone</h4>
+                                        <p>0321 8711020<br>+92 315 8466285</p>
+                                    </div>
+                                </li>
+                                <li class="contact-item">
+                                    <div class="contact-icon">
+                                        <i class="fas fa-envelope"></i>
+                                    </div>
+                                    <div class="contact-details">
+                                        <h4>Email</h4>
+                                        <p>sohnasalon@gmail.com<br></p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- OpenStreetMap -->
+                    <div class="col-lg-3 col-md-6">
+                        <div class="map-section">
+                            <h3 class="section-title">Our Location</h3>
+                            <div class="map-container">
+                                <div id="openstreetmap"></div>
+                                <div class="map-overlay">
+                                    <h5>Sohna Salon</h5>
+                                    <p>plot number 27/2/6، Sohna salon, Malir Cantt Check Post No 2, sheet 24 Jinnah Ave، near zaidi Manzil bus stop and, Model Colony Block 24 malir, , Karachi, Pakistan</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bottom Row: Copyright & Legal -->
+                <div class="footer-bottom">
+                    <div class="container">
+                        <div class="copyright-bar">
+                            <p class="copyright">
+                                © 2024 <a href="#">Sohna Salon</a>. All Rights Reserved.
+                            </p>
+                            <div class="legal-links">
+                                <a href="#" class="legal-link">Privacy Policy</a>
+                                <a href="#" class="legal-link">Terms of Service</a>
+                                <a href="#" class="legal-link">Cookie Policy</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+
+
+    <!-- Bootstrap 5 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/script.js"></script>
+       <!-- Leaflet JS (OpenStreetMap) -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+</body>
+</html>
