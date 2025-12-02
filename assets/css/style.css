@@ -3272,10 +3272,10 @@ body {
         }
 
         /* Dark Mode Support */
-        @media (prefers-color-scheme: dark) {
+        /* @media (prefers-color-scheme: dark) {
             :root {
-                --bg-white: #1A1A1A;
-                --text-primary: #FFFFFF;
+                --bg-white: #ffffff;
+                --text-primary: #1A1A1A;
                 --text-secondary: #CCCCCC;
                 --card-bg: #252525;
                 --border-red: rgba(200, 16, 46, 0.3);
@@ -3288,7 +3288,7 @@ body {
             .map-overlay {
                 background: rgba(26, 26, 26, 0.95);
             }
-        }
+        } */
 
         /* Leaflet Map Custom Styles */
         .leaflet-container {
