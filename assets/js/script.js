@@ -724,7 +724,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 📍 *Sent from Sohna Salon Website*`;
 
             // Open WhatsApp
-            const whatsappURL = `https://wa.me/+923222118856?text=${encodeURIComponent(message)}`;
+            const whatsappURL = `https://wa.me/+923158466285?text=${encodeURIComponent(message)}`;
             setTimeout(() => {
                 window.open(whatsappURL, '_blank');
             }, 2000);
