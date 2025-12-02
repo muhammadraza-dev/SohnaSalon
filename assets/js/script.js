@@ -1,3 +1,111 @@
+// ========== CUSTOM CURSOR ==========
+const cursor = document.getElementById('customCursor');
+const cursorDot = document.getElementById('customCursorDot');
+
+let mouseX = 0, mouseY = 0;
+let cursorX = 0, cursorY = 0;
+let cursorDotX = 0, cursorDotY = 0;
+
+// Smooth cursor movement
+const updateCursor = () => {
+    // Main cursor with delay for smooth effect
+    cursorX += (mouseX - cursorX) * 0.1;
+    cursorY += (mouseY - cursorY) * 0.1;
+    
+    cursor.style.left = cursorX + 'px';
+    cursor.style.top = cursorY + 'px';
+    
+    // Dot cursor with less delay (faster)
+    cursorDotX += (mouseX - cursorDotX) * 0.3;
+    cursorDotY += (mouseY - cursorDotY) * 0.3;
+    
+    cursorDot.style.left = cursorDotX + 'px';
+    cursorDot.style.top = cursorDotY + 'px';
+    
+    requestAnimationFrame(updateCursor);
+};
+
+document.addEventListener('mousemove', (e) => {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+});
+
+// Start cursor animation
+updateCursor();
+
+// Hover effects
+const addHoverEffect = (element) => {
+    element.addEventListener('mouseenter', () => {
+        cursor.style.transform = 'scale(1.5)';
+        cursor.style.background = 'rgba(200, 16, 46, 0.2)';
+        cursor.style.borderColor = '#ff3366';
+        cursorDot.style.transform = 'scale(1.5)';
+        cursorDot.style.background = '#ff3366';
+    });
+    
+    element.addEventListener('mouseleave', () => {
+        cursor.style.transform = 'scale(1)';
+        cursor.style.background = 'rgba(200, 16, 46, 0.1)';
+        cursor.style.borderColor = 'var(--primary-red)';
+        cursorDot.style.transform = 'scale(1)';
+        cursorDot.style.background = 'var(--primary-red)';
+    });
+};
+
+// Apply to interactive elements
+document.querySelectorAll('a, button, .service-card, .nav-link, .btn, .gallery-card, .glass-card').forEach(addHoverEffect);
+
+// Click effect
+document.addEventListener('mousedown', () => {
+    cursor.style.transform = 'scale(0.8)';
+    cursorDot.style.transform = 'scale(0.5)';
+});
+
+document.addEventListener('mouseup', () => {
+    cursor.style.transform = 'scale(1)';
+    cursorDot.style.transform = 'scale(1)';
+});
+
+// Hide on touch devices
+if ('ontouchstart' in window) {
+    cursor.style.display = 'none';
+    cursorDot.style.display = 'none';
+}
+
+// ========== SCROLL TO TOP ==========
+const scrollToTopBtn = document.getElementById('scrollToTop');
+
+window.addEventListener('scroll', () => {
+    if (window.pageYOffset > 300) {
+        scrollToTopBtn.style.display = 'flex';
+    } else {
+        scrollToTopBtn.style.display = 'none';
+    }
+});
+
+scrollToTopBtn.addEventListener('click', () => {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+});
+
+// ========== SMOOTH SCROLL ==========
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href');
+        if(targetId === '#') return;
+        
+        const targetElement = document.querySelector(targetId);
+        if(targetElement) {
+            window.scrollTo({
+                top: targetElement.offsetTop - 80,
+                behavior: 'smooth'
+            });
+        }
+    });
+});
 
         // Loader
         window.addEventListener('load', function() {

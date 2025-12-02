@@ -91,6 +91,263 @@ body {
     100% { width: 100%; }
 }
 
+/* ========== CUSTOM CURSOR ========== */
+.custom-cursor {
+    width: 40px;
+    height: 40px;
+    border: 2px solid var(--primary-red);
+    border-radius: 50%;
+    position: fixed;
+    pointer-events: none;
+    z-index: 9999;
+    mix-blend-mode: normal;
+    transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94), 
+                width 0.3s ease, 
+                height 0.3s ease,
+                border-color 0.3s ease,
+                background 0.3s ease;
+    background: rgba(200, 16, 46, 0.1);
+    backdrop-filter: blur(2px);
+    box-shadow: 0 0 10px rgba(200, 16, 46, 0.3);
+    animation: cursorPulse 2s infinite;
+}
+
+.custom-cursor-dot {
+    width: 8px;
+    height: 8px;
+    background: var(--primary-red);
+    border-radius: 50%;
+    position: fixed;
+    pointer-events: none;
+    z-index: 10000;
+    mix-blend-mode: normal;
+    transition: transform 0.15s ease,
+                background 0.3s ease,
+                box-shadow 0.3s ease;
+    box-shadow: 0 0 8px rgba(200, 16, 46, 0.8);
+    animation: dotPulse 1.5s infinite;
+}
+
+@keyframes cursorPulse {
+    0%, 100% {
+        box-shadow: 0 0 10px rgba(200, 16, 46, 0.3);
+    }
+    50% {
+        box-shadow: 0 0 20px rgba(200, 16, 46, 0.5);
+    }
+}
+
+@keyframes dotPulse {
+    0%, 100% {
+        transform: scale(1);
+        box-shadow: 0 0 8px rgba(200, 16, 46, 0.8);
+    }
+    50% {
+        transform: scale(1.2);
+        box-shadow: 0 0 15px rgba(200, 16, 46, 1);
+    }
+}
+
+/* Hover effects for links and buttons */
+a:hover ~ .custom-cursor,
+button:hover ~ .custom-cursor,
+.nav-link:hover ~ .custom-cursor,
+.btn:hover ~ .custom-cursor {
+    transform: scale(1.5);
+    background: rgba(200, 16, 46, 0.2);
+    border-color: #ff3366;
+    animation: hoverPulse 0.5s infinite;
+}
+
+a:hover ~ .custom-cursor-dot,
+button:hover ~ .custom-cursor-dot,
+.nav-link:hover ~ .custom-cursor-dot,
+.btn:hover ~ .custom-cursor-dot {
+    background: #ff3366;
+    transform: scale(1.5);
+    box-shadow: 0 0 20px rgba(255, 51, 102, 1);
+}
+
+@keyframes hoverPulse {
+    0%, 100% {
+        transform: scale(1.5);
+    }
+    50% {
+        transform: scale(1.6);
+    }
+}
+
+/* Special hover effect for service cards */
+.service-card:hover ~ .custom-cursor {
+    transform: scale(2);
+    background: rgba(200, 16, 46, 0.3);
+    border-color: #FFD700;
+    border-width: 3px;
+}
+
+.service-card:hover ~ .custom-cursor-dot {
+    background: #FFD700;
+    transform: scale(2);
+}
+
+/* Click effect */
+body:active ~ .custom-cursor {
+    transform: scale(0.8);
+    background: rgba(200, 16, 46, 0.4);
+}
+
+body:active ~ .custom-cursor-dot {
+    transform: scale(0.5);
+}
+
+/* Hide cursor on touch devices */
+@media (hover: none) and (pointer: coarse) {
+    .custom-cursor,
+    .custom-cursor-dot {
+        display: none !important;
+    }
+}
+
+/* For mobile/tablet - smaller cursor */
+@media (max-width: 768px) {
+    .custom-cursor {
+        width: 30px;
+        height: 30px;
+    }
+    
+    .custom-cursor-dot {
+        width: 6px;
+        height: 6px;
+    }
+}
+
+/* Special states */
+body.loading ~ .custom-cursor {
+    animation: rotateCursor 2s linear infinite;
+    border-style: dashed;
+    border-width: 3px;
+}
+
+@keyframes rotateCursor {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* ========== CUSTOM SCROLLBAR ========== */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--primary-red);
+    border-radius: 10px;
+    border: 2px solid #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--hover-red);
+}
+
+/* Firefox */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: var(--primary-red) #f1f1f1;
+}
+
+/* ========== WHATSAPP BUTTON ========== */
+.whatsapp-float {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 25px;
+    right: 25px;
+    background-color: #25D366;
+    color: #FFF;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 30px;
+    box-shadow: 0 5px 15px rgba(37, 211, 102, 0.4);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    border: 2px solid white;
+}
+
+.whatsapp-float:hover {
+    background-color: #128C7E;
+    transform: scale(1.1);
+    box-shadow: 0 8px 20px rgba(37, 211, 102, 0.6);
+}
+
+.whatsapp-float:active {
+    transform: scale(0.95);
+}
+
+.whatsapp-float i {
+    margin-top: 3px;
+}
+
+/* WhatsApp tooltip on hover */
+.whatsapp-float::after {
+    content: "Chat on WhatsApp";
+    position: absolute;
+    right: 70px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 12px;
+    white-space: nowrap;
+    opacity: 0;
+    transition: opacity 0.3s;
+    pointer-events: none;
+}
+
+.whatsapp-float:hover::after {
+    opacity: 1;
+}
+
+/* ========== SCROLL TO TOP BUTTON ========== */
+.scroll-to-top {
+    position: fixed;
+    bottom: 100px;
+    right: 25px;
+    width: 50px;
+    height: 50px;
+    background: var(--gradient-red);
+    color: white;
+    border-radius: 50%;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    cursor: pointer;
+    z-index: 999;
+    box-shadow: 0 4px 15px rgba(200, 16, 46, 0.4);
+    border: 2px solid white;
+    transition: all 0.3s ease;
+}
+
+.scroll-to-top:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(200, 16, 46, 0.6);
+}
+
+
 /* Navbar */
 .navbar {
     background: rgba(255, 255, 255, 0.95);
